@@ -1,0 +1,19 @@
+CREATE DATABASE registro;
+
+USE registro;
+
+CREATE TABLE nivelAcceso (
+	id INT auto_increment primary KEY,
+    nombre varchar(50) NOT NULL,
+    descripcion varchar(255)
+);
+
+CREATE  TABLE usuario(
+	id INT auto_increment primary key,
+    nombre varchar(100) not null,
+    correo varchar(100) not null,
+    idNivelAcceso int,
+    foreign key(idNivelAcceso) references nivelAcceso(id)
+);
+select * from nivelacceso
+insert into nivelacceso (nombre, descripcion) values ('administrador', 'permisos especiales')
